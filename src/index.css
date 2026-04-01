@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Space Grotesk", sans-serif;
+
+  --color-quantum-blue: #29c4ff;
+  --color-quantum-pink: #ff2969;
+  --color-quantum-green: #00ff88;
+  --color-quantum-bg: #0a0f1c;
+  --color-quantum-card: #1a1f38;
+  --color-quantum-border: #3a2a8c;
+}
+
+@layer base {
+  body {
+    @apply bg-quantum-bg text-gray-200 font-sans;
+  }
+}
+
+.quantum-glow {
+  box-shadow: 0 0 20px rgba(41, 196, 255, 0.3);
+}
+
+.quantum-gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-quantum-blue via-quantum-pink to-quantum-green;
+}
+
+.terminal-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-track {
+  @apply bg-black/20;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-quantum-blue/50 rounded;
+}
